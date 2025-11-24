@@ -6,6 +6,12 @@ namespace QuanLySinhVien_GIT_
         {
             InitializeComponent();
         }
+        public class Student
+        {
+            public string Name { get; set; }
+            public string Gender { get; set; }
+            public string Class { get; set; }
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
