@@ -33,18 +33,49 @@ namespace QuanLySinhVien_GIT_
 
         private void add_Click(object sender, EventArgs e)
         {
-            // Tạo đối tượng sinh viên mới từ dữ liệu người dùng nhập
+            string name = txtname.Text.Trim();
+
+            // --- KIỂM TRA LỖI HỌ TÊN ---
+            // 1. Không được chứa số
+            if (name.Any(char.IsDigit))
+            {
+                MessageBox.Show("Họ tên không được chứa số!", "Lỗi nhập liệu",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                ClearInput();
+                return;
+            }
+
+            // 2. Không được vượt quá 30 ký tự
+            if (name.Length > 30)
+            {
+                MessageBox.Show("Họ tên không được dài quá 30 ký tự!", "Lỗi nhập liệu",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                ClearInput();
+                return;
+            }
+
+            // Nếu hợp lệ → tạo đối tượng Student
             Student s = new Student()
             {
-                Name = txtname.Text,
+                Name = name,
                 Gender = gender.Text,
                 Class = txtlop.Text
             };
-            // Thêm vào danh sách
+
             students.Add(s);
-            // Hiển thị lại danh sách
+
+            // Cập nhật bảng
             board.DataSource = null;
             board.DataSource = students;
+        }
+        private void ClearInput()
+        {
+            txtname.Text = "";
+            gender.Text = "";
+            txtlop.Text = "";
+            txtname.Focus(); // focus lại vào tên
         }
 
         private void update_Click(object sender, EventArgs e)
