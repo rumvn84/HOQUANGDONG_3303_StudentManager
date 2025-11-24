@@ -28,12 +28,194 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            delete = new Button();
+            search = new Button();
+            update = new Button();
+            add = new Button();
+            txtlop = new TextBox();
+            gender = new ComboBox();
+            label2 = new Label();
+            label3 = new Label();
+            label1 = new Label();
+            splitContainer1 = new SplitContainer();
+            txtname = new TextBox();
+            dataGridView1 = new DataGridView();
+            label4 = new Label();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
+            // 
+            // delete
+            // 
+            delete.Location = new Point(151, 368);
+            delete.Name = "delete";
+            delete.Size = new Size(75, 45);
+            delete.TabIndex = 10;
+            delete.Text = "Xoá";
+            delete.UseVisualStyleBackColor = true;
+            // 
+            // search
+            // 
+            search.Location = new Point(55, 368);
+            search.Name = "search";
+            search.Size = new Size(75, 45);
+            search.TabIndex = 9;
+            search.Text = "Tìm kiếm";
+            search.UseVisualStyleBackColor = true;
+            // 
+            // update
+            // 
+            update.Location = new Point(151, 300);
+            update.Name = "update";
+            update.Size = new Size(75, 45);
+            update.TabIndex = 8;
+            update.Text = "Cập nhật";
+            update.UseVisualStyleBackColor = true;
+            // 
+            // add
+            // 
+            add.Location = new Point(55, 300);
+            add.Name = "add";
+            add.Size = new Size(75, 45);
+            add.TabIndex = 7;
+            add.Text = "Thêm";
+            add.UseVisualStyleBackColor = true;
+            // 
+            // txtlop
+            // 
+            txtlop.Font = new Font("Segoe UI", 13F);
+            txtlop.Location = new Point(107, 244);
+            txtlop.Name = "txtlop";
+            txtlop.Size = new Size(172, 31);
+            txtlop.TabIndex = 6;
+            // 
+            // gender
+            // 
+            gender.FormattingEnabled = true;
+            gender.ItemHeight = 15;
+            gender.Items.AddRange(new object[] { "Nam", "Nữ" });
+            gender.Location = new Point(107, 197);
+            gender.Name = "gender";
+            gender.Size = new Size(73, 23);
+            gender.TabIndex = 5;
+            gender.Text = "Nam/Nữ";
+            // 
+            // label2
+            // 
+            label2.Font = new Font("Segoe UI", 13F);
+            label2.Location = new Point(3, 194);
+            label2.Name = "label2";
+            label2.Size = new Size(98, 35);
+            label2.TabIndex = 4;
+            label2.Text = "Giới tính";
+            // 
+            // label3
+            // 
+            label3.Font = new Font("Segoe UI", 13F);
+            label3.Location = new Point(3, 244);
+            label3.Name = "label3";
+            label3.Size = new Size(98, 35);
+            label3.TabIndex = 3;
+            label3.Text = "Lớp";
+            // 
+            // label1
+            // 
+            label1.Font = new Font("Segoe UI", 13F);
+            label1.Location = new Point(3, 127);
+            label1.Name = "label1";
+            label1.Size = new Size(98, 35);
+            label1.TabIndex = 0;
+            label1.Text = "Họ và tên";
+            // 
+            // splitContainer1
+            // 
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.Location = new Point(0, 0);
+            splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            splitContainer1.Panel1.Controls.Add(label4);
+            splitContainer1.Panel1.Controls.Add(delete);
+            splitContainer1.Panel1.Controls.Add(search);
+            splitContainer1.Panel1.Controls.Add(update);
+            splitContainer1.Panel1.Controls.Add(add);
+            splitContainer1.Panel1.Controls.Add(txtlop);
+            splitContainer1.Panel1.Controls.Add(gender);
+            splitContainer1.Panel1.Controls.Add(label2);
+            splitContainer1.Panel1.Controls.Add(label3);
+            splitContainer1.Panel1.Controls.Add(txtname);
+            splitContainer1.Panel1.Controls.Add(label1);
+            splitContainer1.Panel1.Paint += splitContainer1_Panel1_Paint;
+            // 
+            // splitContainer1.Panel2
+            // 
+            splitContainer1.Panel2.Controls.Add(dataGridView1);
+            splitContainer1.Size = new Size(800, 450);
+            splitContainer1.SplitterDistance = 286;
+            splitContainer1.TabIndex = 1;
+            // 
+            // txtname
+            // 
+            txtname.Font = new Font("Segoe UI", 13F);
+            txtname.Location = new Point(107, 127);
+            txtname.Name = "txtname";
+            txtname.Size = new Size(172, 31);
+            txtname.TabIndex = 1;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(3, 3);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(504, 444);
+            dataGridView1.TabIndex = 0;
+            // 
+            // label4
+            // 
+            label4.Font = new Font("Verdana", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(45, 49);
+            label4.Name = "label4";
+            label4.Size = new Size(194, 37);
+            label4.TabIndex = 11;
+            label4.Text = "Thông tin sinh viên";
+            label4.Click += label4_Click;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(splitContainer1);
+            Name = "Form1";
+            Text = "Form1";
+            Load += Form1_Load;
+            splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel1.PerformLayout();
+            splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button delete;
+        private Button search;
+        private Button update;
+        private Button add;
+        private TextBox txtlop;
+        private ComboBox gender;
+        private Label label2;
+        private Label label3;
+        private Label label1;
+        private SplitContainer splitContainer1;
+        private TextBox txtname;
+        private DataGridView dataGridView1;
+        private Label label4;
     }
 }
