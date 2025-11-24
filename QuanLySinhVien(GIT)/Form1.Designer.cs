@@ -38,14 +38,14 @@
             label3 = new Label();
             label1 = new Label();
             splitContainer1 = new SplitContainer();
-            txtname = new TextBox();
-            dataGridView1 = new DataGridView();
             label4 = new Label();
+            txtname = new TextBox();
+            board = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)board).BeginInit();
             SuspendLayout();
             // 
             // delete
@@ -56,6 +56,7 @@
             delete.TabIndex = 10;
             delete.Text = "Xoá";
             delete.UseVisualStyleBackColor = true;
+            delete.Click += delete_Click;
             // 
             // search
             // 
@@ -74,6 +75,7 @@
             update.TabIndex = 8;
             update.Text = "Cập nhật";
             update.UseVisualStyleBackColor = true;
+            update.Click += update_Click;
             // 
             // add
             // 
@@ -83,6 +85,7 @@
             add.TabIndex = 7;
             add.Text = "Thêm";
             add.UseVisualStyleBackColor = true;
+            add.Click += add_Click;
             // 
             // txtlop
             // 
@@ -153,26 +156,11 @@
             // 
             // splitContainer1.Panel2
             // 
-            splitContainer1.Panel2.Controls.Add(dataGridView1);
+            splitContainer1.Panel2.Controls.Add(board);
+            splitContainer1.Panel2.Paint += splitContainer1_Panel2_Paint;
             splitContainer1.Size = new Size(800, 450);
             splitContainer1.SplitterDistance = 286;
             splitContainer1.TabIndex = 1;
-            // 
-            // txtname
-            // 
-            txtname.Font = new Font("Segoe UI", 13F);
-            txtname.Location = new Point(107, 127);
-            txtname.Name = "txtname";
-            txtname.Size = new Size(172, 31);
-            txtname.TabIndex = 1;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 3);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(504, 444);
-            dataGridView1.TabIndex = 0;
             // 
             // label4
             // 
@@ -183,6 +171,24 @@
             label4.TabIndex = 11;
             label4.Text = "Thông tin sinh viên";
             label4.Click += label4_Click;
+            // 
+            // txtname
+            // 
+            txtname.Font = new Font("Segoe UI", 13F);
+            txtname.Location = new Point(107, 127);
+            txtname.Name = "txtname";
+            txtname.Size = new Size(172, 31);
+            txtname.TabIndex = 1;
+            // 
+            // board
+            // 
+            board.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            board.Location = new Point(3, 3);
+            board.Name = "board";
+            board.Size = new Size(504, 444);
+            board.TabIndex = 0;
+            board.CellClick += board_CellClick;
+            board.CellContentClick += board_CellContentClick;
             // 
             // Form1
             // 
@@ -198,7 +204,7 @@
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)board).EndInit();
             ResumeLayout(false);
         }
 
@@ -215,7 +221,7 @@
         private Label label1;
         private SplitContainer splitContainer1;
         private TextBox txtname;
-        private DataGridView dataGridView1;
         private Label label4;
+        private DataGridView board;
     }
 }
