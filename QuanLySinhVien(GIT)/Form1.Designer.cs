@@ -66,6 +66,7 @@
             search.TabIndex = 9;
             search.Text = "Tìm kiếm";
             search.UseVisualStyleBackColor = true;
+            search.Click += search_Click;
             // 
             // update
             // 
@@ -182,6 +183,7 @@
             // 
             // board
             // 
+            board.BackgroundColor = SystemColors.ControlLightLight;
             board.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             board.Location = new Point(3, 3);
             board.Name = "board";
